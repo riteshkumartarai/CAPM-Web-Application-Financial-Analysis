@@ -7,7 +7,7 @@ import CAPM_function
 
 st.set_page_config(page_title="CAPM CALCULATION",page_icon="chart_with_upwards_trend",layout="wide")
 
-st.title("capital Asset Pricing Model")
+st.title("Capital Asset Pricing Model")
 
 #geting input from user
 col1,col2=st.columns([1,1])
@@ -38,14 +38,14 @@ try:
 
     col1,col2 =st.columns([1,1])
     with col1:
-        st.markdown("###DataFrame Head")
+        st.markdown("DataFrame Head")
         st.dataframe(stock_df.head(),use_container_width=True)
     with col2:
-        st.markdown("###Dataframe Tail")    
+        st.markdown("Dataframe Tail")    
         st.dataframe(stock_df.tail(),use_container_width=True)
     col1,col2=st.columns([1,1])
     with col1:
-        st.markdown("###prince of all stock")
+        st.markdown("Price of all stock")
         st.plotly_chart(CAPM_function.interactive_plot(stock_df))
         
     with col2:
@@ -71,7 +71,7 @@ try:
 
 
     with col1:
-        st.markdown("### Calculated Beta Value")
+        st.markdown("Calculated Beta Value")
         st.dataframe(beta_df,use_container_width=True)
 
     rf= 0
@@ -85,7 +85,7 @@ try:
     return_df['Return Value'] =return_value 
 
     with col2:
-        st.markdown("###Calculated retun using capm")
+        st.markdown("Calculated retun using capm")
         
         st.dataframe(return_df,use_container_width=True)  
 except:
